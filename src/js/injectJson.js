@@ -1,17 +1,15 @@
 /**
- * Created by Mario C. Bee on 21.02.2017.
- * @todo filename und path is hardcoded.
+ * Injects data from JSON (http://www.schema.org) in your html.
+ * The goal is to serve valid microdata for google.
  *
  */
 $(document).ready(function () {
     var filename = "person.json";
     var path = "data/";
-    console.log(path + filename);
     $.ajax({
         dataType: "json",
         url: path + filename,
         success: function (data) {
-            //test 1
             $("#name").append(data.name);
             $("#jobTitle").append(data.jobTitle);
             $("#streetAddress").append(data.address.streetAddress);
