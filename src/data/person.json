@@ -1,0 +1,19 @@
+{
+  "@context": "http://www.schema.org",
+  "@type": "person",
+  "name": "Mario C. Bee",
+  "jobTitle": "WordPress Web Developer Webseitenmacher",
+  "url": "https://www.webseitenmacher.ch",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Dorfmattweg 2",
+    "postOfficeBoxNumber": "3075",
+    "addressLocality": "Rüfenacht",
+    "addressRegion": "Bern",
+    "postalCode": "3075",
+    "addressCountry": "Schweiz"
+  },
+  "email": "mario.bee@webseitenmacher.ch",
+  "telephone": "+41797089125",
+  "birthDate": "1983-11-14"
+}
