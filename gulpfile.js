@@ -118,4 +118,4 @@ gulp.task('dist', ['sass-prod', 'scripts', 'copy-assets' ], function () {
 });
 
 
-gulp.task('default', ['copy-assets', 'sass', 'sass-prod', 'scripts' /*, possible other tasks... */]);
+gulp.task('default', ['dist', 'sass' /*, possible other tasks... */]);
