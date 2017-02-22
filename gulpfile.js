@@ -2,7 +2,7 @@
 var basePaths = {
     node: './node_modules/',
     dev: './src/',
-    dist: './dist/'
+    dist: './public/'
 };
 
 // saas options
