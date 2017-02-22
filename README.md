@@ -1,4 +1,4 @@
-# bootstrap4-onepage-starter
+# Bootstrap 4 Onepager Starter
 start your onpager html project with bootstrap4-onepage-starter
 
 ### npm install
