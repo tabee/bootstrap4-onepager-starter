@@ -1,5 +1,5 @@
 {
-  "name": "starter4",
+  "name": "bootstrap-4-onepager-starter",
   "version": "1.0.0",
   "main": "gulpfile.js",
   "dependencies": {
@@ -28,5 +28,13 @@
   "keywords": [],
   "author": "Mario C. Bee",
   "license": "ISC",
-  "description": ""
+  "description": "start your onpager html project with bootstrap4-onepage-starter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tabee/bootstrap4-onepager-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tabee/bootstrap4-onepager-starter/issues"
+  },
+  "homepage": "https://github.com/tabee/bootstrap4-onepager-starter#readme"
 }
