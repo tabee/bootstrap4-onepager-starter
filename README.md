@@ -1,6 +1,3 @@
- https://github.com/validator/validator/releases/latest
-
-
 # bootstrap4-onepage-starter
 start your onpager html project with bootstrap4-onepage-starter
 
