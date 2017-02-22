@@ -59,7 +59,6 @@ gulp.task('scripts', function () {
     //   .pipe(gulp.dest(basePaths.dist + 'js/'));
 });
 
-// fast
 gulp.task('watch-sass', function () {
     return gulp
     // Watch the input folder for change,
@@ -72,7 +71,6 @@ gulp.task('watch-sass', function () {
         });
 });
 
-// fast
 gulp.task('watch-scripts', function () {
     return gulp
     // Watch the input folder for change,
@@ -110,6 +108,13 @@ gulp.task('copy-assets', function () {
         .pipe(gulp.dest(basePaths.dist + '/assets/fonts'))
         .pipe(gulp.dest(basePaths.dev + '/assets/fonts'));
     return stream;
+});
+
+// dist
+gulp.task('dist', ['sass-prod', 'scripts', 'copy-assets' ], function () {
+// Copy HTML from src to dist
+    gulp.src(basePaths.dev + '*.html')
+        .pipe(gulp.dest(basePaths.dist + '/'));
 });
 
 
