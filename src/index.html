@@ -1,25 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mario C. Bee">
-    <link rel="icon" href="favicon.ico">
 
     <title>Sticky Footer Navbar Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS, Fontawesom &  Custom styles for this theme -->
-    <link href="assets/css/theme.css" rel="stylesheet">
     <script type='application/ld+json' src="data/person.json"></script>
 
-
+    <link rel="icon" href="favicon.ico">
+    <!-- Bootstrap core CSS, Fontawesom &  Custom styles for this theme -->
+    <link href="assets/css/theme.css" rel="stylesheet">
     <!-- OWL -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css"/>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.theme.default.css"/>
-
 
 </head>
 
@@ -53,6 +53,49 @@
 </nav>
 
 <!-- Begin page content -->
+
+
+<section id="typing" class="container d-flex justify-content-center">
+
+    <div class="d-flex align-items-center flex-wrap w-100">
+
+        <div class="d-flex flex-column col-12 offset-md-1 col-md-8">
+
+            <h1 class="my-2 sr-only">Typing</h1>
+
+            <div class="type-wrap display-2">
+                <div id="typed-strings">
+                    <p>Welcome!</p>
+                    <p>Typed.js is a <strong>jQuery</strong> plugin.</p>
+                    <p>It <em>types</em> out sentences.</p>
+                    <p>And then deletes them.</p>
+                    <p>Try it out!</p>
+                    <p>Are you ok with that?<br>Then scroll down 😊</p>
+                </div>
+                <span id="typed" class="display-2" style="white-space:pre;"></span>
+            </div>
+
+        </div>
+
+        <div class="d-flex flex-column col-12 offset-md-1 col-md-1 justify-content-around">
+
+            <a href="#" class="smothscroll text-center my-2">
+                <i class="fa fa-arrow-up fa-3x"></i>
+                <span class="sr-only">Loading...</span>
+            </a>
+
+            <a href="#section0" class="smothscroll text-center  my-2 animated infinite pulse">
+                <i class="fa fa-arrow-down fa-3x" aria-hidden="true"></i>
+                <span class="sr-only">contact</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <section id="section0" class="container d-flex justify-content-center text-white bg-primary">
 
     <div class="d-flex align-items-center flex-wrap w-100">
@@ -77,14 +120,14 @@
 
         <div class="d-flex flex-column col-12 offset-md-1 col-md-1 justify-content-around">
 
-            <!--            <a href="#section1" class="smothscroll text-center text-white my-2">
-                            <i class="fa fa-arrow-up fa-3x"></i>
-                            <span class="sr-only">Loading...</span>
-                        </a>-->
+            <a href="#typing" class="smothscroll text-center text-white my-2 animated infinite pulse">
+                <i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i>
+                <span class="sr-only">to section typing</span>
+            </a>
 
             <a href="#section1" class="smothscroll text-center text-white my-2 animated infinite pulse">
                 <i class="fa fa-arrow-down fa-3x" aria-hidden="true"></i>
-                <span class="sr-only">contact</span>
+                <span class="sr-only">to section 1</span>
             </a>
 
         </div>
@@ -271,7 +314,10 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js"></script>
 <script src="assets/js/app.js"></script>
+
+
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 </body>
+
 </html>
