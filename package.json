@@ -30,6 +30,7 @@
     "run-sequence": "^1.2.2"
   },
   "scripts": {
+    "postinstall": "gulp --gulpfile gulpfile.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
