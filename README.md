@@ -10,12 +10,12 @@ start your onpager html project with bootstrap4-onepage-starter
 
 
 
-Licenses & Credits
-=
+# Licenses & Credits
+- Owl Carousel 2 : https://owlcarousel2.github.io/OwlCarousel2/ | https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE ()
+- Animate CSS: https://daneden.github.io/animate.css/ | https://github.com/daneden/animate.css/blob/master/LICENSE (Code licensed under MIT)
 - Font Awesome: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-- Bootstrap: http://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (Code licensed under MIT documentation under CC BY 3.0.)
+- Bootstrap 4 alpha: http://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (Code licensed under MIT documentation under CC BY 3.0.)
 - jQuery: https://jquery.org | (Code licensed under MIT)
 
-Donate
-=
-https://www.paypal.me/MarioBee/
+# Donate
+Let's pay me a beer https://www.paypal.me/MarioBee/
