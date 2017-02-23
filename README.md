@@ -11,6 +11,7 @@ start your onpager html project with bootstrap4-onepage-starter
 
 
 # Licenses & Credits
+- Typed.js: www.mattboldt.com | https://github.com/mattboldt/typed.js/blob/master/LICENSE.txt (Code licensed under MIT) 
 - Owl Carousel 2 : https://owlcarousel2.github.io/OwlCarousel2/ | https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE (Coded by David Deutsch
 - Animate CSS: https://daneden.github.io/animate.css/ | https://github.com/daneden/animate.css/blob/master/LICENSE (Code licensed under MIT)
 - Font Awesome: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
