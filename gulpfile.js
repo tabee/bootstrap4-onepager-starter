@@ -45,38 +45,25 @@ gulp.task('sass-prod', function () {
 // uglifies and concat all JS files into one
 gulp.task('scripts', function () {
     var scripts = [
-        basePaths.dev + 'js/*.js' // Must be loaded before BS4
+        // include typed.js too
+        basePaths.dev + 'assets/js/typed.js',
+        // all custom scripts
+        basePaths.dev + 'js/*.js'
     ];
     gulp.src(scripts)
         .pipe(concat('app.js'))
         .pipe(gulp.dest(basePaths.dev + 'assets/js'))
         .pipe(uglify())
         .pipe(gulp.dest(basePaths.dist + 'assets/js'));
-
-    //   gulp.src(scripts)
-    //    .pipe(concat('theme.js'))
-    //   .pipe(gulp.dest(basePaths.dist + 'js/'));
 });
 
-gulp.task('watch-sass', function () {
-    return gulp
-    // Watch the input folder for change,
-    // and run `sass` task when something happens
-        .watch(basePaths.dev + '**/*.scss', ['sass-prod', 'sass'])
-        // When there is a change,
-        // log a message in the console
-        .on('change', function (event) {
-            console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-        });
-});
 
-gulp.task('watch-scripts', function () {
+gulp.task('watch-all', function () {
     return gulp
-    // Watch the input folder for change,
-    // and run `sass` task when something happens
-        .watch(basePaths.dev + '**/*.js', ['scripts'])
-        // When there is a change,
-        // log a message in the console
+        .watch(
+            [basePaths.dev + 'js/**/*.js', basePaths.dev + 'sass/**/*.scss', basePaths.dev + '*.html'],
+            ['default']
+        )
         .on('change', function (event) {
             console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
         });
@@ -96,6 +83,10 @@ gulp.task('copy-assets', function () {
     gulp.src(basePaths.node + 'tether/dist/js/tether.min.js')
         .pipe(gulp.dest(basePaths.dist + '/assets/js'))
         .pipe(gulp.dest(basePaths.dev + '/assets/js'));
+    // Copy Typed JS file
+    gulp.src(basePaths.node + 'typed.js/js/typed.js')
+        .pipe(gulp.dest(basePaths.dev + 'assets/js'));
+
 // Copy Data
     gulp.src(basePaths.dev + 'data/*.json')
         .pipe(gulp.dest(basePaths.dist + '/data'));
@@ -110,11 +101,11 @@ gulp.task('copy-assets', function () {
 });
 
 // dist
-gulp.task('dist', ['sass-prod', 'scripts', 'copy-assets'], function () {
+gulp.task('dist', [ 'copy-assets', 'scripts', 'sass-prod'], function () {
 // Copy HTML from src to dist
     gulp.src(basePaths.dev + '*.html')
         .pipe(gulp.dest(basePaths.dist + '/'));
 });
 
 
-gulp.task('default', ['dist', 'sass' /*, possible other tasks... */]);
+gulp.task('default', ['sass', 'dist' /*, possible other tasks... */]);
