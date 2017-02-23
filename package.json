@@ -6,7 +6,8 @@
     "animate.css": "^3.5.2",
     "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
-    "owl.carousel": "^2.2.0"
+    "owl.carousel": "^2.2.0",
+    "typed.js": "^1.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.4",
