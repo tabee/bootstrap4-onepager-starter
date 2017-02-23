@@ -25,7 +25,7 @@ var clean = require('gulp-clean');
 var chug = require('gulp-chug');
 var cssnano = require('gulp-cssnano');
 var sourcemaps = require('gulp-sourcemaps');
-var cleanCSS = require('gulp-clean-css');
+
 
 
 gulp.task('animatecss-gulp-default', function () {
@@ -38,7 +38,7 @@ gulp.task('sass', function () {
     return gulp.src(basePaths.dev + '/sass/theme.scss')
         .pipe(sass(sassOptionsDefault).on('error', sass.logError))
         .pipe(gulp.dest(basePaths.dev + 'assets/css')) // save a default css file in working folder.
-        .pipe(cleanCSS({compatibility: 'ie9'}))
+        //   .pipe(cleanCSS({compatibility: 'ie10'}))
         .pipe(sourcemaps.init())
         .pipe(cssnano())
         .pipe(sourcemaps.write('.'))
