@@ -10,10 +10,10 @@ var sassOptionsDefault = {
     errLogToConsole: true,
     outputStyle: 'nested' //:nested :compact :expanded :compressed
 };
-var sassOptionsProd = {
-    errLogToConsole: true,
-    outputStyle: 'compressed' //
-};
+/*var sassOptionsProd = {
+ errLogToConsole: true,
+ outputStyle: 'compressed' //
+ };*/
 
 // required
 var gulp = require('gulp');
@@ -23,6 +23,8 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var clean = require('gulp-clean');
 var chug = require('gulp-chug');
+var cssnano = require('gulp-cssnano');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 gulp.task('animatecss-gulp-default', function () {
@@ -31,25 +33,35 @@ gulp.task('animatecss-gulp-default', function () {
 });
 
 
-// compact css
 gulp.task('sass', function () {
-    return gulp
-        .src(basePaths.dev + '/sass/theme.scss')
+    return gulp.src(basePaths.dev + '/sass/theme.scss')
         .pipe(sass(sassOptionsDefault).on('error', sass.logError))
-        //.pipe(gulp.dest(basePaths.dist + 'css'))
-        .pipe(gulp.dest(basePaths.dev + 'assets/css'));
-});
-
-// compressed css
-gulp.task('sass-prod', function () {
-    return gulp
-        .src(basePaths.dev + '/sass/theme.scss')
-        //.pipe(rename({suffix: '.min'}))
-        .pipe(sass(sassOptionsProd).on('error', sass.logError))
+        .pipe(gulp.dest(basePaths.dev + 'assets/css'))
+        .pipe(sourcemaps.init())
+        .pipe(cssnano())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(basePaths.dist + 'assets/css'));
-    //.pipe(gulp.dest(basePaths.dev + 'css'));
-
 });
+
+
+/*// compact css
+ gulp.task('sass', function () {
+ return gulp
+ .src(basePaths.dev + '/sass/theme.scss')
+ .pipe(sass(sassOptionsDefault).on('error', sass.logError))
+ .pipe(gulp.dest(basePaths.dev + 'assets/css'));
+ });
+
+ // compressed css
+ gulp.task('sass-prod', function () {
+ return gulp
+ .src(basePaths.dev + '/sass/theme.scss')
+ //.pipe(rename({suffix: '.min'}))
+ .pipe(sass(sassOptionsProd).on('error', sass.logError))
+ .pipe(gulp.dest(basePaths.dist + 'assets/css'));
+ //.pipe(gulp.dest(basePaths.dev + 'css'));
+
+ });*/
 
 // uglifies and concat all JS files into one
 gulp.task('scripts', function () {
@@ -67,7 +79,7 @@ gulp.task('scripts', function () {
 });
 
 
-gulp.task('watch', ['copy-assets'], function () {
+gulp.task('watch', ['dist'],function () {
     return gulp
         .watch(
             [basePaths.dev + 'js/**/*.js',
@@ -109,7 +121,7 @@ gulp.task('copy-assets', function () {
 });
 
 // dist
-gulp.task('dist', ['scripts', 'sass', 'sass-prod'], function () {
+gulp.task('dist', ['scripts', 'sass'], function () {
 // Copy HTML from src to dist
     gulp.src(basePaths.dev + '*.html')
         .pipe(gulp.dest(basePaths.dist + '/'));
@@ -127,4 +139,4 @@ gulp.task('clean', function () {
 });
 
 
-gulp.task('default', ['animatecss-gulp-default']);
+gulp.task('default', ['animatecss-gulp-default', 'copy-assets']);
