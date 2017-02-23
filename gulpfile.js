@@ -25,6 +25,7 @@ var clean = require('gulp-clean');
 var chug = require('gulp-chug');
 var cssnano = require('gulp-cssnano');
 var sourcemaps = require('gulp-sourcemaps');
+var cleanCSS = require('gulp-clean-css');
 
 
 gulp.task('animatecss-gulp-default', function () {
@@ -36,32 +37,13 @@ gulp.task('animatecss-gulp-default', function () {
 gulp.task('sass', function () {
     return gulp.src(basePaths.dev + '/sass/theme.scss')
         .pipe(sass(sassOptionsDefault).on('error', sass.logError))
-        .pipe(gulp.dest(basePaths.dev + 'assets/css'))
+        .pipe(gulp.dest(basePaths.dev + 'assets/css')) // save a default css file in working folder.
+        .pipe(cleanCSS({compatibility: 'ie9'}))
         .pipe(sourcemaps.init())
         .pipe(cssnano())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(basePaths.dist + 'assets/css'));
 });
-
-
-/*// compact css
- gulp.task('sass', function () {
- return gulp
- .src(basePaths.dev + '/sass/theme.scss')
- .pipe(sass(sassOptionsDefault).on('error', sass.logError))
- .pipe(gulp.dest(basePaths.dev + 'assets/css'));
- });
-
- // compressed css
- gulp.task('sass-prod', function () {
- return gulp
- .src(basePaths.dev + '/sass/theme.scss')
- //.pipe(rename({suffix: '.min'}))
- .pipe(sass(sassOptionsProd).on('error', sass.logError))
- .pipe(gulp.dest(basePaths.dist + 'assets/css'));
- //.pipe(gulp.dest(basePaths.dev + 'css'));
-
- });*/
 
 // uglifies and concat all JS files into one
 gulp.task('scripts', function () {
@@ -79,7 +61,7 @@ gulp.task('scripts', function () {
 });
 
 
-gulp.task('watch', ['dist'],function () {
+gulp.task('watch', ['dist'], function () {
     return gulp
         .watch(
             [basePaths.dev + 'js/**/*.js',
