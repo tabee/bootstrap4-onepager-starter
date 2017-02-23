@@ -37,7 +37,7 @@ gulp.task('sass-prod', function () {
         .src(basePaths.dev + '/sass/theme.scss')
         //.pipe(rename({suffix: '.min'}))
         .pipe(sass(sassOptionsProd).on('error', sass.logError))
-        .pipe(gulp.dest(basePaths.dist + 'assets/css'))
+        .pipe(gulp.dest(basePaths.dist + 'assets/css'));
     //.pipe(gulp.dest(basePaths.dev + 'css'));
 
 });
@@ -46,7 +46,6 @@ gulp.task('sass-prod', function () {
 gulp.task('scripts', function () {
     var scripts = [
         basePaths.dev + 'js/*.js' // Must be loaded before BS4
-
     ];
     gulp.src(scripts)
         .pipe(concat('app.js'))
