@@ -21,6 +21,17 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
+var clean = require('gulp-clean');
+var chug = require( 'gulp-chug' );
+
+
+gulp.task( 'animatecss-gulp-default', function () {
+    gulp.src(basePaths.dev + '/sass/animate.css/gulpfile.js' )
+        .pipe( chug() )
+} );
+
+
+
 
 // compact css
 gulp.task('sass', function () {
@@ -58,7 +69,7 @@ gulp.task('scripts', function () {
 });
 
 
-gulp.task('watch-all', function () {
+gulp.task('watch', function () {
     return gulp
         .watch(
             [basePaths.dev + 'js/**/*.js', basePaths.dev + 'sass/**/*.scss', basePaths.dev + '*.html'],
@@ -101,11 +112,19 @@ gulp.task('copy-assets', function () {
 });
 
 // dist
-gulp.task('dist', [ 'copy-assets', 'scripts', 'sass-prod'], function () {
+gulp.task('dist', [ 'copy-assets', 'scripts', 'sass', 'sass-prod'], function () {
 // Copy HTML from src to dist
     gulp.src(basePaths.dev + '*.html')
         .pipe(gulp.dest(basePaths.dist + '/'));
 });
 
 
-gulp.task('default', ['sass', 'dist' /*, possible other tasks... */]);
+// clean
+gulp.task('clean', function () {
+// removes files and folders.
+    return gulp.src([basePaths.dist, basePaths.dev + 'assets',basePaths.dev + 'sass/animate.css/animate.scss'], {read: false})
+        .pipe(clean());
+});
+
+
+gulp.task('default', ['animatecss-gulp-default']);
