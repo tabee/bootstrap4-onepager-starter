@@ -38,7 +38,7 @@ gulp.task('sass-prod', function () {
         //.pipe(rename({suffix: '.min'}))
         .pipe(sass(sassOptionsProd).on('error', sass.logError))
         .pipe(gulp.dest(basePaths.dist + 'assets/css'))
-        //.pipe(gulp.dest(basePaths.dev + 'css'));
+    //.pipe(gulp.dest(basePaths.dev + 'css'));
 
 });
 
@@ -63,7 +63,7 @@ gulp.task('watch-sass', function () {
     return gulp
     // Watch the input folder for change,
     // and run `sass` task when something happens
-        .watch(basePaths.dev + '**/*.scss', ['sass-prod','sass'])
+        .watch(basePaths.dev + '**/*.scss', ['sass-prod', 'sass'])
         // When there is a change,
         // log a message in the console
         .on('change', function (event) {
@@ -111,7 +111,7 @@ gulp.task('copy-assets', function () {
 });
 
 // dist
-gulp.task('dist', ['sass-prod', 'scripts', 'copy-assets' ], function () {
+gulp.task('dist', ['sass-prod', 'scripts', 'copy-assets'], function () {
 // Copy HTML from src to dist
     gulp.src(basePaths.dev + '*.html')
         .pipe(gulp.dest(basePaths.dist + '/'));
