@@ -22,15 +22,13 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var clean = require('gulp-clean');
-var chug = require( 'gulp-chug' );
+var chug = require('gulp-chug');
 
 
-gulp.task( 'animatecss-gulp-default', function () {
-    gulp.src(basePaths.dev + '/sass/animate.css/gulpfile.js' )
-        .pipe( chug() )
-} );
-
-
+gulp.task('animatecss-gulp-default', function () {
+    gulp.src(basePaths.dev + '/sass/animate.css/gulpfile.js')
+        .pipe(chug())
+});
 
 
 // compact css
@@ -69,11 +67,15 @@ gulp.task('scripts', function () {
 });
 
 
-gulp.task('watch', function () {
+gulp.task('watch', ['copy-assets'], function () {
     return gulp
         .watch(
-            [basePaths.dev + 'js/**/*.js', basePaths.dev + 'sass/**/*.scss', basePaths.dev + '*.html'],
-            ['default']
+            [basePaths.dev + 'js/**/*.js',
+                basePaths.dev + 'sass/**/*.scss',
+                basePaths.dev + 'data/*.*',
+                basePaths.dev + '*.html'],
+
+            ['dist']
         )
         .on('change', function (event) {
             console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
@@ -97,11 +99,6 @@ gulp.task('copy-assets', function () {
     // Copy Typed JS file
     gulp.src(basePaths.node + 'typed.js/js/typed.js')
         .pipe(gulp.dest(basePaths.dev + 'assets/js'));
-
-// Copy Data
-    gulp.src(basePaths.dev + 'data/*.json')
-        .pipe(gulp.dest(basePaths.dist + '/data'));
-
 ////////////////// End Bootstrap 4 Assets /////////////////////////
 
 // Copy all Font Awesome Fonts
@@ -112,17 +109,20 @@ gulp.task('copy-assets', function () {
 });
 
 // dist
-gulp.task('dist', [ 'copy-assets', 'scripts', 'sass', 'sass-prod'], function () {
+gulp.task('dist', ['scripts', 'sass', 'sass-prod'], function () {
 // Copy HTML from src to dist
     gulp.src(basePaths.dev + '*.html')
         .pipe(gulp.dest(basePaths.dist + '/'));
+    // Copy Data
+    gulp.src(basePaths.dev + 'data/*.*')
+        .pipe(gulp.dest(basePaths.dist + '/data'));
 });
 
 
 // clean
 gulp.task('clean', function () {
 // removes files and folders.
-    return gulp.src([basePaths.dist, basePaths.dev + 'assets',basePaths.dev + 'sass/animate.css/animate.scss'], {read: false})
+    return gulp.src([basePaths.dist, basePaths.dev + 'assets', basePaths.dev + 'sass/animate.css/animate.scss'], {read: false})
         .pipe(clean());
 });
 
