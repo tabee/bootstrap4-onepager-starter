@@ -14,7 +14,7 @@ $(document).ready(function () {
             "😘 Kommst Du wieder?"
         ];
 
-        var inMillisecond = 3000;
+        var inMillisecond = 2666;
         var backupTitle = document.title;
         var position = 0;
         var sceneChanger;
@@ -26,6 +26,7 @@ $(document).ready(function () {
                 position = 0;
             }
         }
+
 
         function stopSceneInterval() {
             clearInterval(sceneChanger);
