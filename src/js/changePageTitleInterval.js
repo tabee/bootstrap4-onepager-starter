@@ -29,6 +29,8 @@ $(document).ready(function () {
 
         function stopSceneInterval() {
             clearInterval(sceneChanger);
+            document.title = backupTitle;
+            position = 0;
         }
 
         $(window).blur(function () {
@@ -39,7 +41,6 @@ $(document).ready(function () {
 
         $(window).focus(function () {
             stopSceneInterval();
-            document.title = backupTitle;
         });
 
     }
