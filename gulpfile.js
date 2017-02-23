@@ -64,7 +64,8 @@ gulp.task('scripts', function () {
 gulp.task('watch', ['dist'], function () {
     return gulp
         .watch(
-            [basePaths.dev + 'js/**/*.js',
+            [
+                basePaths.dev + 'js/*.js',
                 basePaths.dev + 'sass/**/*.scss',
                 basePaths.dev + 'data/*.*',
                 basePaths.dev + '*.html'],
