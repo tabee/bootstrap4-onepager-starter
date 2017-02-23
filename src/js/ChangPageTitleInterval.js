@@ -7,8 +7,14 @@
  */
 $(document).ready(function () {
 
-        var scene = ["🤔 Hallo", "😊 we miss you!", "😘 come back please!"];
-        var millisecondInterval = 1000;
+        var scene = [
+            "🤔 Hallo?",
+            "🤔 Bist Du noch da?",
+            "😊 Wir vermissen Dich!",
+            "😘 Kommst Du wieder?"
+        ];
+
+        var inMillisecond = 3000;
         var backupTitle = document.title;
         var position = 0;
         var sceneChanger;
@@ -28,7 +34,7 @@ $(document).ready(function () {
         $(window).blur(function () {
             sceneChanger = setInterval(function () {
                 sceneInterval()
-            }, millisecondInterval);
+            }, inMillisecond);
         });
 
         $(window).focus(function () {
