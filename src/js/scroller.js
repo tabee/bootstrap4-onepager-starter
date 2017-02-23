@@ -1,5 +1,5 @@
 /**
- * Macht das scrolling smother. beeinflusst alle Links.
+ * class smothscroll on a href link scroll smother.
  */
 $(function () {
     $('a.smothscroll[href*="#"]:not([href="#"])').click(function () {
