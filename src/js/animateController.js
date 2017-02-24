@@ -9,9 +9,8 @@ $( ".fa" ).hover( function() {
 });
 
 // A zoomOut animation for all href's
-$("a").on('click', function () {
+$("a.fa").on('click', function () {
     $(this).animateCss('zoomOut');
-    $(this).hide('slow').delay(200).show('slow');
 });
 
 // helper from fontawesome to add needed classes.
