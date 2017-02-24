@@ -1,15 +1,16 @@
 # Bootstrap 4 Onepager Starter
 start your onpager html project with bootstrap4-onepage-starter
 
-
 ## Install
 you need npm and gulp to work with that.
+
 ## npm
 - Open your terminal
 - Clone this repository
 - Change to the directory where you want to add bootstrap4-onepager-starter
 - Type `npm install`
 - Type `gulp watch`
+
 ## keep clean
 - comment out what you not need, because you probably use this repository.
 
