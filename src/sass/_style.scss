@@ -12,10 +12,31 @@ html, body {
   width: 100%; // because fit the background-color
   padding: 1rem 5rem; // @todo: use media query's for mobile.
 }
+
+header.container,
 footer.container {
   min-height: 0;
 }
 
 
+
+/* Gradient background's
+-------------------------------------------------- */
+@include bg-variant('.bg-black', $black);
+
+.bg-black {
+  background: -webkit-linear-gradient(to bottom, #000000, #181818); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000000, #181818); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
 /* Custom page CSS
 -------------------------------------------------- */
+.sticky.is-sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
