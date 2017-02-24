@@ -8,8 +8,8 @@ $( ".fa" ).hover( function() {
     $(this).animateCss('tada'); // Issue: it breaks fontawesome default animation after hover.
 });
 
-// A zoomOut animation for all href's
-$("a.fa").on('click', function () {
+// A zoomOut animation for all links with fontawesom links.
+$("a .fa").on('click', function () {
     $(this).animateCss('zoomOut');
 });
 
@@ -22,5 +22,3 @@ $.fn.extend({
         });
     }
 });
-
-
