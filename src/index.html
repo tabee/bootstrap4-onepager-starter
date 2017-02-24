@@ -23,10 +23,10 @@
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar-main">
 
 <!-- Fixed navbar -->
-<nav class="navbar navbar-toggleable-md sticky-top navbar-inverse bg-inverse">
+<nav id="navbar-main" class="navbar navbar-toggleable-md <!--sticky-top--> fixed-top navbar-inverse bg-inverse">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -35,14 +35,19 @@
     <a class="navbar-brand" href="#">Fixed navbar</a>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item active sr-only">
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link smothscroll" href="#section0">Section 1 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+                <a class="nav-link smothscroll" href="#section1">Section 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link smothscroll" href="#section3">Section 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link smothscroll" href="#footer">Contact</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -97,10 +102,10 @@
 
         <div class="d-flex flex-column col-12 offset-md-1 col-md-1 justify-content-around">
 
-<!--            <a href="#section1" class="smothscroll text-center text-white my-2">
-                <i class="fa fa-arrow-up fa-3x"></i>
-                <span class="sr-only">Loading...</span>
-            </a>-->
+            <!--            <a href="#section1" class="smothscroll text-center text-white my-2">
+                            <i class="fa fa-arrow-up fa-3x"></i>
+                            <span class="sr-only">Loading...</span>
+                        </a>-->
 
             <a href="#typing" class="smothscroll text-center text-white my-2 ">
                 <i class="fa fa-arrow-down fa-3x" aria-hidden="true"></i>
@@ -205,19 +210,17 @@
 
             <div class="owl-carousel owl-theme">
 
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=1"
-                     data-src-retina="https://placehold.it/700x500&text=1-retina" alt="">
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=2"
-                     data-src-retina="https://placehold.it/700x500&text=2-retina" alt="">
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=3" alt="">
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=4" alt="">
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=5" alt="">
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=6" alt="">
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=7" alt="">
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=8" alt="">
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=9" alt="">
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=10" alt="">
-                <img class="owl-lazy" data-src="https://placehold.it/350x250&text=11" alt="">
+
+                <img class="owl-lazy" data-src="https://placehold.it/750x750&text=normal 1"
+                     data-src-retina="https://placehold.it/1500x1500&text=retina-1" alt="">
+                <img class="owl-lazy" data-src="https://placehold.it/750x750&text=normal 2"
+                     data-src-retina="https://placehold.it/1500x1500&text=retina-2" alt="">
+                <img class="owl-lazy" data-src="https://placehold.it/750x750&text=normal 3"
+                     data-src-retina="https://placehold.it/1500x1500&text=retina-3" alt="">
+                <img class="owl-lazy" data-src="https://placehold.it/750x750&text=normal 4"
+                     data-src-retina="https://placehold.it/1500x1500&text=retina-4" alt="">
+
+
 
             </div>
 
