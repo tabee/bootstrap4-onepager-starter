@@ -19,4 +19,4 @@ start your onpager html project with bootstrap4-onepage-starter
 - jQuery: https://jquery.org | (Code licensed under MIT)
 
 # Donate
-Let's pay me a beer https://www.paypal.me/MarioBee/
+Let's pay me a beer or better a drink via https://www.paypal.me/MarioBee/
