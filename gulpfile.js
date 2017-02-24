@@ -39,9 +39,9 @@ gulp.task('sass', function () {
         .pipe(sass(sassOptionsDefault).on('error', sass.logError))
         .pipe(gulp.dest(basePaths.dev + 'assets/css')) // save a default css file in working folder.
         //   .pipe(cleanCSS({compatibility: 'ie10'}))
-        .pipe(sourcemaps.init())
+        //  .pipe(sourcemaps.init()) we not need now..
         .pipe(cssnano())
-        .pipe(sourcemaps.write('.'))
+        //.pipe(sourcemaps.write('.')) we not need now..
         .pipe(gulp.dest(basePaths.dist + 'assets/css'));
 });
 
