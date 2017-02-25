@@ -1,4 +1,4 @@
-body{
+body {
   position: relative;
 }
 html, body {
@@ -18,17 +18,44 @@ footer.container {
   min-height: 0;
 }
 
-
-
-/* Gradient background's
+/* Custom backgrounds
 -------------------------------------------------- */
 @include bg-variant('.bg-black', $black);
-
 .bg-black {
-  background: -webkit-linear-gradient(to bottom, #000000, #181818); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #000000, #181818); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, #000000, $black); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000000, $black); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+@include bg-variant('.bg-blue', $blue);
+.bg-blue {
+  background: -webkit-linear-gradient(to bottom, yellow, $blue); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, yellow, $blue); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Custom animated.css delays
+-------------------------------------------------- */
+@mixin animated-set($delay) {
+  animation-delay: $delay;
+}
+
+.animated-delay-1 {
+  @include animated-set(1s);
+}
+.animated-delay-2 {
+  @include animated-set(1.125s);
+}
+.animated-delay-3 {
+  @include animated-set(1.25s);
+}
+.animated-delay-4 {
+  @include animated-set(1.375s);
+}
+.animated-delay-5 {
+  @include animated-set(1.5s);
+}
+.animated-delay-6 {
+  @include animated-set(1.625s);
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
