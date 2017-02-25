@@ -13,11 +13,11 @@ This build packages is powered by [npmjs.js](http://npmjs.com/) and [gulp.js](ht
 - Type `gulp watch` to start developyour project
 
 ## Custom Builds
-
+For example, if you need only some of the features from a import like Animate.css, Bootstrap, ... then..
 
 ### Animate.css
-For example, if you want only some of the “attention seekers”, simply edit the `src/sass/animate.css/animate-config.json` file to select only the animations you want to use.
-Next, run `gulp default` to compile your custom animated.css build. This creates the new file `animate.scss` in the same folder. This file will be imported in your main theme.css file when you run `gulp dist`. 
+If you want only some of the “attention seekers”, simply edit the `src/sass/animate.css/animate-config.json` file to select only the animations you want to use.
+Next, run `gulp animatecss-gulp-default` to compile your custom animated.css build. This creates the new file `animate.scss` in the same folder. This file will be imported in your main theme.css file when you run `gulp dist`. 
 
 ```javascript
 "attention_seekers": {
@@ -32,6 +32,11 @@ Next, run `gulp default` to compile your custom animated.css build. This creates
   "jello":true
 }
 ```
+
+### Bootstrap
+ `src/sass/bootstrap4/_variables.scss` for custom variables.
+ `src/sass/bootstrap4/bootstrap.scss` to comment out all the Bootstrap 4 modules you don't need.
+
 
 # Licenses & Credits
 - Typed.js: www.mattboldt.com | https://github.com/mattboldt/typed.js/blob/master/LICENSE.txt (Code licensed under MIT) 
