@@ -13,58 +13,59 @@
     <script type='application/ld+json' src="data/person.json"></script>
 
     <link rel="icon" href="favicon.ico">
-    <!-- Bootstrap core CSS, Fontawesom &  Custom styles for this theme -->
-    <link href="assets/css/theme.css" rel="stylesheet">
     <!-- OWL -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css"/>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.theme.default.css"/>
 
+    <!-- Overrides Bootstrap core CSS, Fontawesom &  Custom styles for this theme -->
+    <link href="assets/css/theme.css" rel="stylesheet">
+
 </head>
 
 <body data-spy="scroll" data-target="#navbar-main">
 
+<!-- Place for welcome jumbotron-slider.-->
+<header class="container  d-flex align-items-center justify-content-center text-white bg-black">
 
-<!-- Place for welcome jumbotron.-->
-<header class="container">
-    <div class="d-flex align-items-center flex-wrap w-100">
+    <div id="owl-carousel-welcome" class="owl-carousel owl-theme w-75">
 
-        <div class="d-flex flex-column col-12 offset-md-1 col-md-8">
 
-            <h1 class="my-2 sr-only">Typing</h1>
-
-            <div class="type-wrap display-2">
-                <div id="typed-strings">
-                    <p>Welcome!</p>
-                    <p>Typed.js is a <strong>jQuery</strong> plugin.</p>
-                    <p>It <em>types</em> out sentences.</p>
-                    <p>And then deletes them.</p>
-                    <p>Try it out!</p>
-                    <p>Are you ok with that?<br>Then scroll down 😊</p>
-                </div>
-                <span id="typed" class="display-2" style="white-space:pre;"></span>
-            </div>
-
+        <div class="jumbotron-fluid iteam">
+            <h1 class="display-3 animated bounceInUp animated-delay-1">
+                <span class="display-4">Freelance</span><br>
+                <em>WordPress</em> Programmierer<br>
+                <span class="display-4">in der Schweiz gesucht?</span>
+            </h1>
+            <p class="lead animated bounceInUp animated-delay-2">Gefunden! Webseitenmacher Web Developer und WordPress
+                WordPress Entwickler für individuelle Themes und Plugins.</p>
+            <hr class="my-4 jumbotron-hr animated bounceInUp animated-delay-3">
+            <p class="animated bounceInUp animated-delay-4">Suchen Sie ein WordPress-Profi?</p>
+            <p class="lead d-flex flex-row justify-content-end">
+                <a class="btn btn-secondary btn-lg m-2 animated bounceInUp animated-delay-5"
+                   href="#"
+                   role="button">Learn more</a>
+                <a class="btn btn-outline-secondary btn-lg m-2 animated bounceInUp animated-delay-6" href="#"
+                   role="button">Learn more</a>
+            </p>
         </div>
 
-        <div class="d-flex flex-column col-12 offset-md-1 col-md-1 justify-content-around">
-
-            <a href="#fontawesome" class="smothscroll text-center my-2">
-                <i class="fa fa-arrow-up fa-3x"></i>
-                <span class="sr-only">Loading...</span>
-            </a>
-
-            <a href="#section0" class="smothscroll text-center  my-2 ">
-                <i class="fa fa-arrow-down fa-3x" aria-hidden="true"></i>
-                <span class="sr-only">contact</span>
-            </a>
-
+        <div class="jumbotron-fluid iteam">
+            <h1 class="display-3">Bye, Webseitenmacher!</h1>
+            <p class="lead">calling extra attention
+                to featured content or information. This is a simple hero unit, a simple jumbotron-style component
+                for</p>
+            <hr class="my-4">
+            <p>space content out within the larger container. It uses utility classes for typography and spacing to </p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
         </div>
 
     </div>
-</header>
 
+</header>
 
 <!-- Fixed navbar -->
 <nav id="navbar-main" class="navbar navbar-toggleable-md navbar-inverse bg-inverse" data-toggle="sticky-onscroll">
@@ -102,7 +103,6 @@
 
     </div>
 </nav>
-
 
 <!-- Begin page content -->
 <section id="fontawesome" class="container d-flex justify-content-center text-white bg-black">
@@ -251,8 +251,7 @@
 
             <h1 class="small my-2">OwlCarousel2</h1>
 
-            <div class="owl-carousel owl-theme">
-
+            <div id="owl-carousel-demo" class="owl-carousel owl-theme">
 
                 <img class="owl-lazy" data-src="https://placehold.it/750x750&text=normal 1"
                      data-src-retina="https://placehold.it/1500x1500&text=retina-1" alt="">
@@ -262,7 +261,6 @@
                      data-src-retina="https://placehold.it/1500x1500&text=retina-3" alt="">
                 <img class="owl-lazy" data-src="https://placehold.it/750x750&text=normal 4"
                      data-src-retina="https://placehold.it/1500x1500&text=retina-4" alt="">
-
 
             </div>
 
